@@ -1,0 +1,22 @@
+# .bash_profile
+
+if [ -z "${XDG_RUNTIME_DIR}" ]
+then
+	export XDG_RUNTIME_DIR="${HOME}/.config/$(id -u)"
+	if [ -d "${XDG_RUNTIME_DIR}" ]
+	then
+		rm -rf "${XDG_RUNTIME_DIR}"
+	fi
+	mkdir "${XDG_RUNTIME_DIR}"
+	chmod 700 "${XDG_RUNTIME_DIR}"
+fi
+
+cleanup() {
+	rm -rf "${XDG_RUNTIME_DIR}"
+}
+
+trap cleanup EXIT SIGKILL SIGTERM ERR
+export TZ='Central' #set my timezone
+
+# Get the aliases and functions
+[ -f $HOME/.bashrc ] && . $HOME/.bashrc

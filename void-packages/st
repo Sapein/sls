@@ -1,0 +1,9 @@
+#!/bin/sh
+./xbps-src extract st
+
+mkdir srcpkgs/st/files
+cp masterdir/builddir/st-*/config.def.h srcpkgs/st/files/config.h
+sed -i 's|Monospace|LiterationMono Nerd Font|g' src/st/files/config.h
+
+./xbps-src pkg -f st
+su -c 'xbps-install -R hostdir/binpkgs -f st'

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo XBPS_ALLOW_RESTRICTED=yes > etc/conf
+./xbps-src pkg discord
+
+su -c 'xbps-install -R hostdir/binpkgs/nonfree discord'

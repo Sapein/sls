@@ -1,0 +1,18 @@
+#!/bin/sh
+
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+#exec /bin/dbus-launch --sh-syntax --exit-with-session /bin/i3 -V -d all
+dbus-run-session i3
+#exec /bin/i3
