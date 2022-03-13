@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Yes, I'm building a custom kernel/kernel-headers, it's because
+# my WiFi card has an issue that I included a patch for, but
+# has yet to be released upstream. So I've included it here for
+# now.
+
+./xbps-src pkg linux5.16 linux5.16-headers
+su -c 'xbps-install -fR hostdir/binpkgs -f linux5.16 linux5.16-headers'
