@@ -1,6 +1,8 @@
 #!/bin/sh
 
 XBPS_PACKAGES_REPO="https://github.com/Sapein/void-packages.git"
+UTILITY_SCRIPTS_REPO="https://github.com/Sapein/utility-scripts.git"
+VIM_CONFIG_REPO="https://github.com/Sapein/vim-setup.git"
 
 install() {
     _programs="$(cat programs/programs)"
