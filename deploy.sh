@@ -27,7 +27,7 @@ programs() {
 vim() {
     rm -rf ~/.vim
     rm ~/.vimrc
-    git clone "https://Chanku@bitbucket.org/Chanku/vim-setup.git" "${HOME}/.vim"
+    git clone "${VIM_CONFIG_REPO}" "${HOME}/.vim"
     "${HOME}/.vim/deploy.sh"
 }
 
@@ -46,5 +46,6 @@ void_packages() (
 )
 
 system_scripts() (
-    ln -s "${HOME}"/develop/personal/system-scripts/ "${HOME}"/.config/scripts
+    git clone "${UTILITY_SCRIPTS_REPO}" "${HOME}"/develop/personal/utility-scripts
+    ln -s "${HOME}"/develop/personal/utility-scripts/ "${HOME}"/.config/scripts
 )
