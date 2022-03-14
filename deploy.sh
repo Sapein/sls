@@ -31,7 +31,7 @@ vim() {
     "${HOME}/.vim/deploy.sh"
 }
 
-system_scripts() (
+utility_scripts() (
     git clone "${UTILITY_SCRIPTS_REPO}" "${HOME}"/develop/personal/utility-scripts
     ln -s "${HOME}"/develop/personal/system-scripts/ "${HOME}"/.config/scripts
 )
@@ -67,8 +67,8 @@ then
             vim)
                 vim
                 ;;
-            system_scripts)
-                system_scripts
+            system_scripts|utility_scripts)
+                utility_scripts
                 ;;
             void_packages)
                 void_packages
@@ -87,7 +87,7 @@ else
     bash
     programs
     vim
-    system_scripts
+    utility_scripts
     void_packages
     images
 fi
