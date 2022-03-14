@@ -49,3 +49,45 @@ void_packages() (
 images() {
     ln -s "${PWD}"/images "${HOME}/.config/sls_background"
 }
+
+if [ -z "${1}" ]
+then
+    for arg in ${@}
+    do
+        case "${1}" in
+            install)
+                install
+                ;;
+            bash)
+                bash
+                ;;
+            programs)
+                programs
+                ;;
+            vim)
+                vim
+                ;;
+            system_scripts)
+                system_scripts
+                ;;
+            void_packages)
+                void_packages
+                ;;
+            images)
+                images
+                ;;
+            *)
+                printf "Unknown Argument!\n"
+                exit 0
+                ;;
+        esac
+    done
+else
+    install
+    bash
+    programs
+    vim
+    system_scripts
+    void_packages
+    images
+fi
