@@ -204,6 +204,6 @@ bar {
 }
 
 #exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus early
-#exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id feh --bg-fill ~/.config/sls_background/angularpride.png
 exec --no-startup-id dunst
