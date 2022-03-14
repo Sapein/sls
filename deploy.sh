@@ -31,9 +31,10 @@ vim() {
     "${HOME}/.vim/deploy.sh"
 }
 
-images() {
-    ln -s "${PWD}"/images "${HOME}/.config/sls_background"
-}
+system_scripts() (
+    git clone "${UTILITY_SCRIPTS_REPO}" "${HOME}"/develop/personal/utility-scripts
+    ln -s "${HOME}"/develop/personal/system-scripts/ "${HOME}"/.config/scripts
+)
 
 void_packages() (
     git clone "${XBPS_PACKAGES_REPO}" "${HOME}"/develop/personal/void-packages
@@ -45,7 +46,6 @@ void_packages() (
     ./void-packages/linux-firmware
 )
 
-system_scripts() (
-    git clone "${UTILITY_SCRIPTS_REPO}" "${HOME}"/develop/personal/utility-scripts
-    ln -s "${HOME}"/develop/personal/utility-scripts/ "${HOME}"/.config/scripts
-)
+images() {
+    ln -s "${PWD}"/images "${HOME}/.config/sls_background"
+}
