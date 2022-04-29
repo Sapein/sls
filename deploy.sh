@@ -39,15 +39,33 @@ utility_scripts() (
 void_packages() (
     git clone "${XBPS_PACKAGES_REPO}" "${HOME}"/develop/personal/void-packages
     cd "${HOME}"/develop/personal/void-packages
+
+    git checkout personal
+
     ./xbps-src binary-bootstrap
     ./void-packages/discord
     ./void-packages/st
     ./void-packages/'linux5.16'
     ./void-packages/linux-firmware
+    ./void-packages/vim
 )
 
 images() {
     ln -s "${PWD}"/images "${HOME}/.config/sls_background"
+}
+
+setup_homedir() {
+    # Make Primary Directory
+    mkdir "${HOME}/develop"
+    mkdir "${HOME}/library"
+    mkdir "${HOME}/games"
+    mkdir "${HOME}/writing"
+    mkdir "${HOME}/videos"
+    mkdir "${HOME}/ttrpg"
+
+    # Make Secondary Directories
+    mkdir "${HOME}/games/launchers"
+    mkdir "${HOME}/develop/personal"
 }
 
 if [ -z "${1}" ]
@@ -55,6 +73,9 @@ then
     for arg in ${@}
     do
         case "${1}" in
+            setup-homedir)
+                setup_homedir
+                ;;
             install)
                 install
                 ;;
@@ -83,11 +104,12 @@ then
         esac
     done
 else
+    setup_homedir
     install
     bash
     programs
-    vim
     utility_scripts
     void_packages
+    vim
     images
 fi
