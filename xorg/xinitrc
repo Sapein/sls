@@ -13,6 +13,4 @@ if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
 
-#exec /bin/dbus-launch --sh-syntax --exit-with-session /bin/i3 -V -d all
 dbus-run-session i3
-#exec /bin/i3
