@@ -3,4 +3,4 @@
 # This is just my personal st setup
 
 ./xbps-src pkg -f st
-su -c 'xbps-install -fR hostdir/binpkgs st'
+su -c 'xbps-install -fR hostdir/binpkgs/personal st'

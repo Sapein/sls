@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# I have a slightly custom Vim setup.
+
+./xbps-src pkg vim
+
+su -c 'xbps-install -fR hostdir/binpkgs/personal vim'

@@ -6,4 +6,4 @@
 # now.
 
 ./xbps-src pkg linux5.16 linux5.16-headers
-su -c 'xbps-install -fR hostdir/binpkgs -f linux5.16 linux5.16-headers'
+su -c 'xbps-install -fR hostdir/binpkgs/personal -f linux5.16 linux5.16-headers'

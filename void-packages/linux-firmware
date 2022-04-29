@@ -4,4 +4,4 @@
 # This is because my mediatek firmware isn't included by default in Void-Linux
 
 ./xbps-src pkg linux-firmware linux-firmware-wireless
-su -c 'xbps-install -fR hostdir/binpkgs linux-firmware linux-firmware-network'
+su -c 'xbps-install -fR hostdir/binpkgs/personal linux-firmware linux-firmware-network'
