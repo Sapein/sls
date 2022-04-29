@@ -19,6 +19,7 @@ bash() {
 programs() {
     rm "${HOME}/.config/i3"
     rm "${HOME}/.config/i3status"
+
     ln -s "${PWD}"/i3 "${HOME}/.config/i3"
     ln -s "${PWD}"/dunst "${HOME}"/.config/dunst
     ln -s "${PWD}"/i3status "${HOME}".config/i3status
