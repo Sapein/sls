@@ -38,17 +38,19 @@ utility_scripts() (
 )
 
 void_packages() (
+    pack_dir="${PWD}"
+
     git clone "${XBPS_PACKAGES_REPO}" "${HOME}"/develop/personal/void-packages
     cd "${HOME}"/develop/personal/void-packages
 
     git checkout personal
 
     ./xbps-src binary-bootstrap
-    ./void-packages/discord
-    ./void-packages/st
-    ./void-packages/'linux5.16'
-    ./void-packages/linux-firmware
-    ./void-packages/vim
+    "${pack_dir}"/void-packages/discord
+    "${pack_dir}"/void-packages/st
+    "${pack_dir}"/void-packages/'linux5.16'
+    "${pack_dir}"/void-packages/linux-firmware
+    "${pack_dir}"/void-packages/vim
 )
 
 images() {
