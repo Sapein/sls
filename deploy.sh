@@ -77,7 +77,7 @@ setup_homedir() {
     mkdir "${HOME}/develop/personal"
 }
 
-if [ -z "${1}" ]
+if [ ! -z "${1}" ]
 then
     for arg in ${@}
     do
