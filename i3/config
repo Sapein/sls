@@ -182,10 +182,17 @@ bindsym $mod+Shift+s exec st
 
 bindsym $mod+r mode "resize"
 
+# Dmenu Keybinds
 bindsym $mod+m exec ${HOME}/.config/scripts/dmenu_books.sh "menu"
 bindsym $mod+b exec ${HOME}/.config/scripts/dmenu_books.sh "Browse"
 bindsym $mod+c exec ${HOME}/.config/scripts/bbs_list.sh "Browse"
 bindsym $mod+Shift+m exec ${HOME}/.config/scripts/bbs_list.sh "menu"
+
+# Audio Keys. This *requires* mpv_control.
+bindsym XF86AudioPlay exec ${HOME}/.config/scripts/mpv_control.sh "play"
+bindsym XF86AudioPause exec ${HOME}/.config/scripts/mpv_control.sh "pause"
+
+# Scratchpad
 bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+grave scratchpad show
 
