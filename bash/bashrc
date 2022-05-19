@@ -11,3 +11,5 @@ hashbang() {
 }
 
 alias activate="source venv/bin/activate"
+alias coderadio="mpv --input-ipc-server=${XDG_RUNTIME_DIR}/mpvsocket  --stream-lavf-o=reconnect_streamed=1 https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
+alias cr=coderadio
