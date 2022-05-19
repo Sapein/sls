@@ -2,6 +2,7 @@
 
 XBPS_PACKAGES_REPO="https://github.com/Sapein/void-packages.git"
 UTILITY_SCRIPTS_REPO="https://github.com/Sapein/utility-scripts.git"
+MPV_CONTROL_REPO="https://github.com/Sapein/mpv-control.git"
 VIM_CONFIG_REPO="https://github.com/Sapein/vim-setup.git"
 
 install() {
@@ -35,6 +36,11 @@ vim() {
 utility_scripts() (
     git clone "${UTILITY_SCRIPTS_REPO}" "${HOME}"/develop/personal/utility-scripts
     ln -s "${HOME}"/develop/personal/system-scripts/ "${HOME}"/.config/scripts
+)
+
+mpv_control() (
+    git clone "${MPV_CONTROL_REPO}" "${HOME}"/develop/personal/mpv-ctrl
+    ln -s "${HOME}"/develop/personal/mpv-ctrl/src/mpv_control.sh "${HOME}/.config/scripts"
 )
 
 void_packages() (
@@ -100,6 +106,9 @@ then
             images)
                 images
                 ;;
+            mpv_control)
+                mpv_control
+                ;;
             *)
                 printf "Unknown Argument!\n"
                 exit 0
@@ -112,6 +121,7 @@ else
     bash
     programs
     utility_scripts
+    mpv_control
     void_packages
     vim
     images
