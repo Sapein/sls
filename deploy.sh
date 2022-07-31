@@ -54,7 +54,6 @@ void_packages() (
     ./xbps-src binary-bootstrap
     "${pack_dir}"/void-packages/discord
     "${pack_dir}"/void-packages/st
-    "${pack_dir}"/void-packages/'linux5.16'
     "${pack_dir}"/void-packages/linux-firmware
     "${pack_dir}"/void-packages/vim
 )
