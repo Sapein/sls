@@ -202,6 +202,8 @@ bindsym ctrl+space exec --no-startup-id dunstctl close
 bindsym ctrl+Shift+space exec --no-startup-id dunstctl close-all
 bindsym ctrl+grave exec --no-startup-id dunstctl history-pop
 bindsym ctrl+Shift+period exec --no-startup-id dunstctl context
+bindsym $mod+Shift+f exec ${HOME}/.config/scripts/dmenu_flatpak.sh
+bindsym $mod+u exec ${HOME}/.config/scripts/dmenu_flatpak.sh
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
