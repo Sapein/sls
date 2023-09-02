@@ -210,10 +210,15 @@ bindsym $mod+u exec --no-startup-id ${HOME}/.config/scripts/dmenu_flatpak.sh
 # finds out, if available)
 bar {
         status_command i3status
+        output DP-0
+        tray_output none
 }
 
 # exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id picom -b
 exec --no-startup-id pipewire
+exec --no-startup-id wireplumber
 exec --no-startup-id pipewire-pulse
 exec --no-startup-id feh --bg-fill ~/.config/sls_background/angularpride.png
 exec --no-startup-id dunst
+exec --no-startup-id stalonetray &
