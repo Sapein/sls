@@ -225,3 +225,8 @@ exec --no-startup-id stalonetray &
 exec --no-startup-id rpcapd -l localhost -n &
 exec --no-startup-id steam -silent -newbigpicture %U
 exec --no-startup-id echo -e 'power on\ndefault-agent\n' | bluetoothctl
+
+for_window [class="pol.exe"] floating enable
+for_window [class="xlabs.exe"] floating enable
+for_window [title="Music Player"] floating enable
+for_window [class="explorer.exe"] floating enable
