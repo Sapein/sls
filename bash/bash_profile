@@ -1,5 +1,6 @@
 # .bash_profile
 
+
 if [ -z "${XDG_RUNTIME_DIR}" ]
 then
 	export XDG_RUNTIME_DIR="${HOME}/.config/$(id -u)"
@@ -18,6 +19,7 @@ cleanup() {
     if [ -z "${ALREADY_LOGGED}" ]
     then
         rm -rf "${XDG_RUNTIME_DIR}"
+        echo -e "power off\n" | bluetoothctl
     fi
 }
 
@@ -25,4 +27,5 @@ trap cleanup EXIT SIGKILL SIGTERM ERR
 
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
-PATH="${PATH}:/home/sapeint/games/launchers"
+
+export PATH="${PATH}:${HOME}/games/launchers:${HOME}/.local/bin/"

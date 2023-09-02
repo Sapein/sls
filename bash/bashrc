@@ -10,6 +10,23 @@ hashbang() {
 	ssh sapeint@da1.hashbang.sh
 }
 
+export VSDBG_ROOT=${HOME}/.local/vsdbg
+export DOTNET_ROOT=${HOME}/.dotnet
+export PATH=${PATH}:${DOTNET_ROOT}:${DOTNET_ROOT}/tools:${VSDBG_ROOT}:/opt/soundux
+
+export LEDGER_FILE="${HOME}/finance/current-hledger.journal"
+alias hledger="hledger --strict"
+
+export STEAM_FRAME_FORCE_CLOSE=1
+
+
 alias activate="source venv/bin/activate"
 alias coderadio="mpv --input-ipc-server=${XDG_RUNTIME_DIR}/mpvsocket  --stream-lavf-o=reconnect_streamed=1 https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
 alias cr=coderadio
+alias single-monitor=./.screenlayout/singlemonitor.sh
+alias dual-monitor=./.screenlayout/dualmonitor.sh
+alias mp3-dl="yt-dlp -x --audio-format=mp3"
+alias wav-dl="yt-dlp -x --audio-format=wav"
+alias flac-dl="yt-dlp -x --audio-format=flac"
+
+. "$HOME/.cargo/env"
