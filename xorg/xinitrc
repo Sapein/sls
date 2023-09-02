@@ -13,4 +13,5 @@ if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
 
+./.screenlayout/dualmonitor.sh
 dbus-run-session i3
