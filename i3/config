@@ -183,8 +183,8 @@ bindsym $mod+Shift+s exec st
 bindsym $mod+r mode "resize"
 
 # Dmenu Keybinds
-bindsym $mod+m exec ${HOME}/.config/scripts/dmenu_books.sh "menu"
-bindsym $mod+b exec ${HOME}/.config/scripts/dmenu_books.sh "Browse"
+bindsym $mod+m exec ${HOME}/.config/scripts/dmenu_books2.sh "menu"
+bindsym $mod+b exec ${HOME}/.config/scripts/dmenu_books2.sh "Browse"
 bindsym $mod+c exec ${HOME}/.config/scripts/bbs_list.sh "Browse"
 bindsym $mod+Shift+m exec ${HOME}/.config/scripts/bbs_list.sh "menu"
 
