@@ -187,6 +187,7 @@ bindsym $mod+m exec ${HOME}/.config/scripts/dmenu_books2.sh "menu"
 bindsym $mod+b exec ${HOME}/.config/scripts/dmenu_books2.sh "Browse"
 bindsym $mod+c exec ${HOME}/.config/scripts/bbs_list.sh "Browse"
 bindsym $mod+Shift+m exec ${HOME}/.config/scripts/bbs_list.sh "menu"
+bindsym $mod+u exec --no-startup-id ${HOME}/.config/scripts/dmenu_flatpak.sh
 
 # Audio Keys. This *requires* mpv_control.
 bindsym XF86AudioPlay exec ${HOME}/.config/scripts/mpv_control.sh "play"
@@ -202,8 +203,6 @@ bindsym ctrl+space exec --no-startup-id dunstctl close
 bindsym ctrl+Shift+space exec --no-startup-id dunstctl close-all
 bindsym ctrl+grave exec --no-startup-id dunstctl history-pop
 bindsym ctrl+Shift+period exec --no-startup-id dunstctl context
-bindsym $mod+Shift+f exec --no-startup-id ${HOME}/.config/scripts/dmenu_flatpak.sh
-bindsym $mod+u exec --no-startup-id ${HOME}/.config/scripts/dmenu_flatpak.sh
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -214,7 +213,6 @@ bar {
         tray_output none
 }
 
-# exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id picom -b
 exec --no-startup-id pipewire
 exec --no-startup-id wireplumber
@@ -223,7 +221,7 @@ exec --no-startup-id feh --bg-fill ~/.config/sls_background/angularpride.png
 exec --no-startup-id dunst
 exec --no-startup-id stalonetray &
 exec --no-startup-id rpcapd -l localhost -n &
-exec --no-startup-id steam -silent -newbigpicture %U
+exec --no-startup-id steam -silent %U
 exec --no-startup-id echo -e 'power on\ndefault-agent\n' | bluetoothctl
 
 for_window [class="pol.exe"] floating enable
