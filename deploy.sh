@@ -52,9 +52,11 @@ void_packages() (
     git checkout personal
 
     ./xbps-src binary-bootstrap
-    "${pack_dir}"/void-packages/discord
-    "${pack_dir}"/void-packages/st
-    "${pack_dir}"/void-packages/vim
+
+    for package in "${pack_dir}"/void-packages/*
+    do
+        "${package}"
+    done
 )
 
 images() {
