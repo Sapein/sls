@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Currently we have to build linux-firmware(-network) separately.
-# This is because my mediatek firmware isn't included by default in Void-Linux
-
-./xbps-src pkg linux-firmware linux-firmware-wireless
-su -c 'xbps-install -fR hostdir/binpkgs/personal linux-firmware linux-firmware-network'
